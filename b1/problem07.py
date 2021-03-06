@@ -3,12 +3,15 @@
 words = input().upper()
 unique = list(set(words))
 cnt_list = []
-for x in unique:
-    cnt = words.count(x)
+for i in unique:
+    cnt = words.count(i)
     cnt_list.append(cnt)
+    print(unique)
+    print(cnt_list)
 
 if cnt_list.count(max(cnt_list)) > 1:
     print('?')
 else:
     max_index = cnt_list.index(max(cnt_list))
+    print(max_index)
     print(unique[max_index])

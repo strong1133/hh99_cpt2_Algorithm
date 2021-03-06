@@ -4,6 +4,7 @@
 numbers = set(range(1, 10000))
 remove_set = set()
 
+# 10 -> 10 +1, 10 +0
 for num in numbers:
     for n in str(num):  # 숫자를 한자리 씩 분리해서 더해줘야 하기 때문에 str처리
         num += int(n)
@@ -13,6 +14,7 @@ self_numbers = numbers - remove_set
 
 for self_number in sorted(self_numbers):
     print(self_number)
+
 
 # 리스트 방식
 numbers = list(range(1, 10_001))
