@@ -12,4 +12,5 @@ def hanoi(n, s, e, o):
 
 n = int(input())
 print((2**n) - 1)
+
 hanoi(n, 1, 3, 2)
