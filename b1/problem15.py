@@ -7,16 +7,16 @@ while 1:
     string = input().rstrip()
     stack = []
     flag = 1
-    for cha in string:
-        if cha == '(' or cha == '[':
-            stack.append(cha)
-        elif cha == ')':
+    for str in string:
+        if str == '(' or str == '[':
+            stack.append(str)
+        elif str == ')':
             if stack and stack[-1] == '(':
                 stack.pop()
             else:
                 flag = 0
                 break
-        elif cha == ']':
+        elif str == ']':
             if stack and stack[-1] == '[':
                 stack.pop()
             else:
