@@ -6,10 +6,11 @@ remove_set = set()
 
 # 10 -> 10 +1, 10 +0
 for num in numbers:
-    for n in str(num):  # 숫자를 한자리 씩 분리해서 더해줘야 하기 때문에 str처리
-        num += int(n)
+    for n in str(num):  # 숫자를 한자리 씩 분리해서 더해줘야 하기 때문에 str처리 만약 10이면 '1','0'
+        num += int(n)   # 이와 같이 처리하는 이유는 자리수마다 더해야 하기 때문
     remove_set.add(num)
 
+# 차집합 연산을 통해 셀프숫자가아닌 값들을 numbers에서 빼줘 self_numbers에 따로 담아준다
 self_numbers = numbers - remove_set
 
 for self_number in sorted(self_numbers):

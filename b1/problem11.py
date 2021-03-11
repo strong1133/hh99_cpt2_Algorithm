@@ -6,6 +6,7 @@ def issosu(num):  # 9
     if num == 1:
         return False
 
+    # 시간 복잡도 감소를 위해 제곱근 방식으로 처리 9의 제곱근 3, 10~15의 제곱근도 3, 16의 제곱근 4
     n = int(math.sqrt(num))  # 3
 
     for v in range(2, n+1):  # 2 ~ 4

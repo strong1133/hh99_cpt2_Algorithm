@@ -5,3 +5,7 @@ b = input()
 for i in a:
     b = b.replace(i, 'a')
 print(len(b))
+
+
+# replace를 이용해 a배열에서 하나씩 꺼내온 i값과 비교해 일치하면 전부 a로 만든다음 전체 길이를 세줬다
+# ex) c=123c=123은  a123a123이 되기 때문에 총 8글자다

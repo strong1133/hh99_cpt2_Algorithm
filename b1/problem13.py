@@ -1,14 +1,19 @@
 # 항해99_알고리즘_2021-03-09, 백준번호: 11651_좌표정렬../by 정석진
 
 
-num = int(input())
-a = []
+num = int(input())  # 몇개의 좌표들이 있는지
+a = []  # 좌표를 넣어줄 a배열
 
-for i in range(num):
-    [x, y] = map(int, input().split())
-    res = [y, x]
-    a.append(res)
+for i in range(num):  # 좌표의 갯수만큼 반복
+    [x, y] = map(int, input().split())  # 좌표를 입력받고
+    res = [y, x]  # res라는 변수에 좌표를 꼬아서 저장
+    # 문제를 출력 예시를 보면 y축 정렬임을 알수 있다.
+    a.append(res)  # a에 뒤집어진 좌표를 넣어준다.
 
-b = sorted(a)
+b = sorted(a)  # a를 정렬해서 b에 넣어줌
+# 개인적인 생각으론 이게 바로 좌표를 y,x로 꼬아준 이유지 않은가 싶다.
+# soted가 x축을 기준으로 정렬를 하는것 같고 (y,x)로 꼬아서 sorted에 던지면
+# sorted입장에선 그냥 (x,y)로 받을것이다. 뒤집어진걸 모르는거다. ex) 1,2 -> (2,1) -> sorted(2,1) //sorted입장에선 x=2 y=1
 for i in range(num):
-    print(b[i][1], b[i][0])
+    print(b[i][1], b[i][0])  # 그렇게 정렬한 b를 좌표의 갯수 num만큼 반복해서 출력
+    # 출력해줄때 다시 꼬아서 출력해줘야 우리가 원래 입력한 좌표가 됨.
