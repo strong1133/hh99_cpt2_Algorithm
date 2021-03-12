@@ -7,25 +7,14 @@ res = []
 for _ in range(r):
     x, y = map(int, input().split())  # 거리 구하기
     num = y-x  # 필요거리
-    if num <= 3:  # 거리 3까지는 1의 속도로 똑같이 가면된다.
-        res.append(num)
-    else:
-        distance = int(math.sqrt(num))  # 거리에 대한 제곱근을 구해서 저장
-        if num == distance**2:  # 거리가 n^2일때
-            res.append(2*distance-1)
-        elif distance**2 < num <= distance**2 + distance:  # 거리가 n^2 이후 부터 n^2+n이하 일때
-            res.append(2*distance)
-        else:  # 거리 그 외
-            res.append(2*distance+1)
+    print(int(math.sqrt(4*(num) - 1)))
 
-for i in res:
-    print(i)
     #
     #
     #  거리  ||   이동   ||  횟수
-    # --------------------------
+    # --------------------------  ***** int(sqrt(4*(diff) -1 ))  => 마스터 공식
     #  1    ||     1   ||  1    ** n은 제곱근 (제곱근은 int이기때문에 소수점을 버린다. 4=>21  5=>2 ... 8=>2  9=>3 )
-    #  2    ||    11   ||  2            int(sqrt(4*(diff) -1 ))  => 마스터 공식
+    #  2    ||    11   ||  2
     #  3    ||   111   ||  3    ->  n<=3 일때까지는2
     #  4    ||   121   ||  3    ->  n^2일때  2*(n제곱근) -1 만큼 이동
     #  5    ||  1211   ||  4    ->  n^2 이후 부터 n^2+n이하는 2n => 2(2) =4
