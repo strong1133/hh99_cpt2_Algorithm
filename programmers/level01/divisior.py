@@ -11,4 +11,5 @@ def solution(arr, divisor):
 
 #
 # def solution(arr, divisor): return sorted([n for n in arr if n%divisor == 0]) or [-1]
-#  sorted가 비어있으면 거짓이므로 뒤어꺼 반환
+# sorted가 비어있으면 거짓이므로 뒤어꺼 반환
+#
