@@ -32,7 +32,6 @@ def dfs(start, dic):
     visited.append(start)
     for i in dic[start]:
         if i not in visited:
-
             dfs(i, dic)
     return visited
 

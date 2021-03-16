@@ -1,4 +1,8 @@
 # 항해99_알고리즘_2021-03-15 백준번호: 2630_색종이../by 정석진
+# 분할정복에 대한 이해가 필요하다.
+# 해당 문제에 대한 코드 분석은 TIL에 기록했다.
+# https://github.com/strong1133/TIL/blob/main/Algorithm/%EB%B6%84%ED%95%A0%EC%8B%AC%ED%99%94(%EC%83%89%EC%A2%85%EC%9D%B4%EB%AC%B8%EC%A0%9C)_(21-03-16).md
+
 from sys import stdin
 input = stdin.readline
 
