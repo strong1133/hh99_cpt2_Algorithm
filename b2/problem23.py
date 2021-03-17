@@ -8,7 +8,8 @@ input = stdin.readline
 
 n = int(input())
 colorpaper = [list(map(int, input().split())) for _ in range(n)]
-# n*m의 직사각형 배열
+print(colorpaper)
+# n*n 정사각형 배열
 
 white = 0  # 하얀색 갯수를 담아줄 변수
 blue = 0  # 파란색 갯수를 담아줄 변수

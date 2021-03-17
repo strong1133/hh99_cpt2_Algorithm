@@ -1,4 +1,4 @@
-# 항해99_알고리즘_2021-03-15 백준번호: 9663_N-Queen../by 정석진
+# 항해99_알고리즘_2021-03-16 백준번호: 9663_N-Queen../by 정석진
 from sys import stdin
 input = stdin.readline
 
