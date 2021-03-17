@@ -13,9 +13,8 @@ for i in range(link):
 for i in range(r):
     dic[i].sort()  # 문제 조건에서 작은 번호를 먼저 방문하라는 말이 있어서 정렬을 해줘야힘
 
+
 # bfs
-
-
 def bfs(start, dic):
     queue = [start]
     visited = [start]

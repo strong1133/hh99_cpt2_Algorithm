@@ -1,11 +1,13 @@
 # 항해99_알고리즘_2021-03-15 백준번호: 2231_분해합../by 정석진
 
-r = int(input())
-res = 0
-for i in range(1, r+1):
+r = int(input())  # 타겟 숫자를 입력받는다
+res = 0  # 결과를 담아줄 변수 초기화
+for i in range(1, r+1):  # 0은 연산할 필요가 없으니 1 ~ r+1까지
+    # 만약 i가 11이면 str(11) -> int('1','1') -> list(map(1,1)) -> [1,1]
     d = list(map(int, str(i)))
+    # 생성숫자는 11+1+1 , 12+1+2 같은 모양이니 하나씩 따로 담아준 d의 합과 원래 숫자 i를 더해주면 된다.
     s = i + sum(d)
-    if s == r:
-        res = i
+    if s == r:  # 그렇게 생성한 숫자가 타겟과 같으면
+        res = i  # 현재 i로 들어온 숫자를 res에 담아준다.
         break
 print(res)
