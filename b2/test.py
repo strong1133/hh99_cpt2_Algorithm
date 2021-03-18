@@ -1,26 +1,44 @@
-n, m, v = map(int, input().split())
-# 정점이 n개일 때, n*n크기의 이차원 배열을 생성한다.
-a = [[0 for _ in range(n+1)] for _ in range(n+1)]
-for i in range(m):
-    x, y = map(int, input().split())
-    # x와y가 연결되어있음을 의미함. 방향은 무의미하므로 반대도 성립
-    a[x][y] = a[y][x] = 1
-
-
-def dfs(start_node, visited_node):
-    # 모든 노드를 돌아다니면서 한 노드 다 팔 때 까지
-    # stack에 시작노드를 입력하고
-    # visited node에 시작노드를 입력하면서 pop
-    # visited하지않은 노드 다 방문
-    stack = [start_node]
-    while stack:
-        current_node = stack.pop()
-        visited_node = current_node
-        for i in range(len(a[start_node])):
-            print(a[start_node][i])
-            if a[start_node][i] == 1 and i not in visited_node:
-                stack.append(i)
-    return visited_node
-
-
-print(dfs(v, []))
+import sys
+num = int(sys.stdin.readline())
+num_list = list(x for x in range(1, num + 1))
+stack = []
+# print(num_list)
+answer = []
+error = False
+for _ in range(num+1):
+    target = int(sys.stdin.readline())
+    # target 이 num_list 에 없다면 "NO"
+    if error:
+        continue
+    # stack 이 비어있을 땐 무조건 append!
+    if len(stack) == 0:
+        for i in range(target):
+            stack.append(num_list[0])
+            num_list.pop(0)
+            answer.append("+")
+        continue
+    # stack 의 맨 위가 target 과 같거나 클 때
+    if stack[-1] >= target:
+        while stack[-1] >= target:
+            stack.pop()
+            answer.append("-")
+            if len(stack) == 0:
+                break
+        continue
+    # stack 의 맨 위가 target 보다 작을 때
+    if stack[-1] < target:
+        # 이때 target 이 num_list 에 없다면!?
+        if target not in num_list:
+            error = True
+            continue
+        while stack[-1] != target:
+            stack.append(num_list.pop(0))
+            answer.append("+")
+        # stack 의 마지막과 target 이 같아졌으면,
+        # target 에 해당하는 stack 을 pop 시켜준다.
+        stack.pop()
+        answer.append("-")
+if error != True:
+    print(*answer, sep='\n')
+else:
+    print("NO")
