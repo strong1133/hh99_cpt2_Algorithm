@@ -5,7 +5,7 @@ stack = []
 # print(num_list)
 answer = []
 error = False
-for _ in range(num+1):
+for _ in range(num):
     target = int(sys.stdin.readline())
     # target 이 num_list 에 없다면 "NO"
     if error:
